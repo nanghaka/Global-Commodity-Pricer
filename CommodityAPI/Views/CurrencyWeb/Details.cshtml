@@ -1,0 +1,22 @@
+﻿@model CommodityAPI.Models.Currency
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Currency</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CurrencyName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CurrencyName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CurrencyID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

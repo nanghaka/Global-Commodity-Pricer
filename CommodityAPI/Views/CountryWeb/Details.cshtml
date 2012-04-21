@@ -1,0 +1,29 @@
+﻿@model CommodityAPI.Models.Country
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Country</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CountryName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CountryName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Currencies.CurrencyName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Currencies.CurrencyName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CountryID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

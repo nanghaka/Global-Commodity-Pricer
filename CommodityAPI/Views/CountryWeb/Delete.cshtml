@@ -1,0 +1,32 @@
+﻿@model CommodityAPI.Models.Country
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Country</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CountryName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CountryName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Currencies.CurrencyName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Currencies.CurrencyName)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

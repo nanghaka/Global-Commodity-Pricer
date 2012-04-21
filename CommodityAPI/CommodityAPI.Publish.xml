@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="https://41.206.34.244:8172/msdeploy.axd" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="gmtest" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="True" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="MSDeploy" replaceMatchingFiles="True" userName="george" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaH6uXywQX0uuwreNP+sbDAAAAAACAAAAAAAQZgAAAAEAACAAAADkgoZDbZH9XWnINSdffentTbcHbNp/NIL1XiJURVrvfwAAAAAOgAAAAAIAACAAAACdXFUzE+h40Ubo6nnqvsp1/fvEC3bpTFAX0qfS3YgXLyAAAAC/j27f7Y8EghTO+qmOOx+uHgI2ZkarnFp8g+38oHPt10AAAACv0R2QWNeEL54JeZxu37/VSkpa/x1x2qt/Em+OE7Ez52vt++51G09l4Jx4+IsDdWcoVBiPmiNjMNjZ7J2sz9pY" SelectedForPublish="True" />
+</publishData>
