@@ -12,7 +12,7 @@ namespace CommodityAPI.Models
         public virtual int CommodityID { get; set; }
         public virtual string CommodityName { get; set; }
         public virtual decimal CommodityPrice { get; set; }
-
+        [ScaffoldColumn(false)]
         public virtual DateTime DateTimeSubmitted { get; set; }
         public virtual string User { get; set; }
 

@@ -8,43 +8,42 @@ using System.Net;
 
 namespace CommodityAPI.Controllers
 {
-    public class CountriesController : ApiController
+    public class CountryController : ApiController
     {
-        // GET /api/countries
-        public CommodityAPIContext db = new CommodityAPIContext();
-        public CountriesController()
+        // GET /api/country
+        CommodityAPIContext db = new CommodityAPIContext();
+        public CountryController()
         {
-            db.Configuration.ProxyCreationEnabled = false;
             db.Configuration.LazyLoadingEnabled = false;
+            db.Configuration.ProxyCreationEnabled = false;
         }
         public IEnumerable<Country> Get()
         {
             return db.Countries.ToList();
         }
 
-        // GET /api/countries/5
+        // GET /api/country/5
         public Country Get(int id)
         {
-            return db.Countries.Find(id);
+            return db.Countries.Single(option => option.CountryID == id);
         }
 
-        // POST /api/countries
+        // POST /api/country
         public HttpResponseMessage<Country> Post(Country value)
         {
-
             db.Countries.Add(value);
             db.SaveChanges();
             var response = new HttpResponseMessage<Country>(value, HttpStatusCode.Created);
-            response.Headers.Location = new Uri(Request.RequestUri, "/api/Countries/" + value.CountryID);
+            response.Headers.Location=new Uri(Request.RequestUri, "/api/Country/" + value.CountryID);
             return response;
         }
 
-        // PUT /api/countries/5
+        // PUT /api/country/5
         public void Put(int id, string value)
         {
         }
 
-        // DELETE /api/countries/5
+        // DELETE /api/country/5
         public void Delete(int id)
         {
         }

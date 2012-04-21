@@ -1,0 +1,69 @@
+﻿@model IEnumerable<CommodityAPI.Models.Commodity>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CommodityName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CommodityPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateTimeSubmitted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Units.UnitName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CommodityName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CommodityPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateTimeSubmitted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Units.UnitName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Latitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Longitude)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CommodityID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CommodityID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CommodityID })
+        </td>
+    </tr>
+}
+
+</table>

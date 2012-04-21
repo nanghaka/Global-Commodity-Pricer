@@ -1,0 +1,29 @@
+﻿@model CommodityAPI.Models.UnitMeasure
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>UnitMeasure</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UnitName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UnitName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ShortForm)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ShortForm)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.UnitMeasureID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

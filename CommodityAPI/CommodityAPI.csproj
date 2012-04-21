@@ -134,18 +134,19 @@
   <ItemGroup>
     <Compile Include="Controllers\CommodityController.cs" />
     <Compile Include="Controllers\CommodityWebController.cs" />
-    <Compile Include="Controllers\CountriesController.cs" />
+    <Compile Include="Controllers\CountryController.cs" />
     <Compile Include="Controllers\CountryWebController.cs" />
+    <Compile Include="Controllers\CurrencyController.cs" />
     <Compile Include="Controllers\CurrencyWebController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UnitMeasureController.cs" />
     <Compile Include="Controllers\UnitMeasureWebController.cs" />
-    <Compile Include="Controllers\CurrencyController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Commodity.cs" />
     <Compile Include="Models\CommodityAPIContext.cs" />
+    <Compile Include="Models\Commodity.cs" />
     <Compile Include="Models\UnitMeasure.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Currency.cs" />
@@ -230,19 +231,19 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\CurrencyWeb\Index.cshtml" />
+    <Content Include="Views\CommodityWeb\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\CurrencyWeb\Details.cshtml" />
+    <Content Include="Views\CommodityWeb\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\CurrencyWeb\Create.cshtml" />
+    <Content Include="Views\CommodityWeb\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\CurrencyWeb\Edit.cshtml" />
+    <Content Include="Views\CommodityWeb\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\CurrencyWeb\Delete.cshtml" />
+    <Content Include="Views\CommodityWeb\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\CountryWeb\Index.cshtml" />
@@ -258,6 +259,36 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\CountryWeb\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CurrencyWeb\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CurrencyWeb\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CurrencyWeb\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CurrencyWeb\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CurrencyWeb\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UnitMeasureWeb\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UnitMeasureWeb\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UnitMeasureWeb\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UnitMeasureWeb\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UnitMeasureWeb\Delete.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

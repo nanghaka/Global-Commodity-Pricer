@@ -14,7 +14,7 @@ namespace CommodityAPI.Controllers
         private CommodityAPIContext db = new CommodityAPIContext();
 
         //
-        // GET: /CommdityWeb/
+        // GET: /CommodityWeb/
 
         public ActionResult Index()
         {
@@ -23,7 +23,7 @@ namespace CommodityAPI.Controllers
         }
 
         //
-        // GET: /CommdityWeb/Details/5
+        // GET: /CommodityWeb/Details/5
 
         public ActionResult Details(int id = 0)
         {
@@ -36,16 +36,16 @@ namespace CommodityAPI.Controllers
         }
 
         //
-        // GET: /CommdityWeb/Create
+        // GET: /CommodityWeb/Create
 
         public ActionResult Create()
         {
-            ViewBag.CommodityUnitID = new SelectList(db.UnitMeasures, "UnitMeasureID", "ComodityUnitName");
+            ViewBag.UnitMeasureID = new SelectList(db.UnitMeasures, "UnitMeasureID", "UnitName");
             return View();
         }
 
         //
-        // POST: /CommdityWeb/Create
+        // POST: /CommodityWeb/Create
 
         [HttpPost]
         public ActionResult Create(Commodity commodity)
@@ -58,12 +58,12 @@ namespace CommodityAPI.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CommodityUnitID = new SelectList(db.UnitMeasures, "UnitMeasureID", "UnitName", commodity.UnitMeasureID);
+            ViewBag.UnitMeasureID = new SelectList(db.UnitMeasures, "UnitMeasureID", "UnitName", commodity.UnitMeasureID);
             return View(commodity);
         }
 
         //
-        // GET: /CommdityWeb/Edit/5
+        // GET: /CommodityWeb/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
@@ -72,12 +72,12 @@ namespace CommodityAPI.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CommodityUnitID = new SelectList(db.UnitMeasures, "UnitMeasureID", "UnitName", commodity.UnitMeasureID);
+            ViewBag.UnitMeasureID = new SelectList(db.UnitMeasures, "UnitMeasureID", "UnitName", commodity.UnitMeasureID);
             return View(commodity);
         }
 
         //
-        // POST: /CommdityWeb/Edit/5
+        // POST: /CommodityWeb/Edit/5
 
         [HttpPost]
         public ActionResult Edit(Commodity commodity)
@@ -88,12 +88,12 @@ namespace CommodityAPI.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CommodityUnitID = new SelectList(db.UnitMeasures, "UnitMeasureID", "UnitName", commodity.UnitMeasureID);
+            ViewBag.UnitMeasureID = new SelectList(db.UnitMeasures, "UnitMeasureID", "UnitName", commodity.UnitMeasureID);
             return View(commodity);
         }
 
         //
-        // GET: /CommdityWeb/Delete/5
+        // GET: /CommodityWeb/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
@@ -106,7 +106,7 @@ namespace CommodityAPI.Controllers
         }
 
         //
-        // POST: /CommdityWeb/Delete/5
+        // POST: /CommodityWeb/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)

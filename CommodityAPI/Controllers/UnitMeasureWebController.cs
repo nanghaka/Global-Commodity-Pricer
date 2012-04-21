@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using CommodityAPI.Models;
 
@@ -11,7 +14,7 @@ namespace CommodityAPI.Controllers
         private CommodityAPIContext db = new CommodityAPIContext();
 
         //
-        // GET: /CommodityUnitWeb/
+        // GET: /UnitMeasureWeb/
 
         public ActionResult Index()
         {
@@ -19,20 +22,20 @@ namespace CommodityAPI.Controllers
         }
 
         //
-        // GET: /CommodityUnitWeb/Details/5
+        // GET: /UnitMeasureWeb/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            UnitMeasure commodityunit = db.UnitMeasures.Find(id);
-            if (commodityunit == null)
+            UnitMeasure unitmeasure = db.UnitMeasures.Find(id);
+            if (unitmeasure == null)
             {
                 return HttpNotFound();
             }
-            return View(commodityunit);
+            return View(unitmeasure);
         }
 
         //
-        // GET: /CommodityUnitWeb/Create
+        // GET: /UnitMeasureWeb/Create
 
         public ActionResult Create()
         {
@@ -40,71 +43,70 @@ namespace CommodityAPI.Controllers
         }
 
         //
-        // POST: /CommodityUnitWeb/Create
+        // POST: /UnitMeasureWeb/Create
 
         [HttpPost]
-        public ActionResult Create(UnitMeasure commodityunit)
+        public ActionResult Create(UnitMeasure unitmeasure)
         {
-            
             if (ModelState.IsValid)
             {
-                db.UnitMeasures.Add(commodityunit);
+                db.UnitMeasures.Add(unitmeasure);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(commodityunit);
+            return View(unitmeasure);
         }
 
         //
-        // GET: /CommodityUnitWeb/Edit/5
+        // GET: /UnitMeasureWeb/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            UnitMeasure commodityunit = db.UnitMeasures.Find(id);
-            if (commodityunit == null)
+            UnitMeasure unitmeasure = db.UnitMeasures.Find(id);
+            if (unitmeasure == null)
             {
                 return HttpNotFound();
             }
-            return View(commodityunit);
+            return View(unitmeasure);
         }
 
         //
-        // POST: /CommodityUnitWeb/Edit/5
+        // POST: /UnitMeasureWeb/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(UnitMeasure commodityunit)
+        public ActionResult Edit(UnitMeasure unitmeasure)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(commodityunit).State = EntityState.Modified;
+                db.Entry(unitmeasure).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(commodityunit);
+            return View(unitmeasure);
         }
 
         //
-        // GET: /CommodityUnitWeb/Delete/5
+        // GET: /UnitMeasureWeb/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            UnitMeasure commodityunit = db.UnitMeasures.Find(id);
-            if (commodityunit == null)
+            UnitMeasure unitmeasure = db.UnitMeasures.Find(id);
+            if (unitmeasure == null)
             {
                 return HttpNotFound();
             }
-            return View(commodityunit);
+            return View(unitmeasure);
         }
 
         //
-        // POST: /CommodityUnitWeb/Delete/5
+        // POST: /UnitMeasureWeb/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            UnitMeasure commodityunit = db.UnitMeasures.Find(id);
-            db.UnitMeasures.Remove(commodityunit);
+            UnitMeasure unitmeasure = db.UnitMeasures.Find(id);
+            db.UnitMeasures.Remove(unitmeasure);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CommodityAPI.Models.UnitMeasure>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShortForm)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShortForm)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UnitMeasureID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UnitMeasureID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UnitMeasureID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,76 @@
+﻿@model CommodityAPI.Models.Commodity
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Commodity</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CommodityName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CommodityName)
+            @Html.ValidationMessageFor(model => model.CommodityName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CommodityPrice)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CommodityPrice)
+            @Html.ValidationMessageFor(model => model.CommodityPrice)
+        </div>
+
+        
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.User)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.User)
+            @Html.ValidationMessageFor(model => model.User)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UnitMeasureID, "Units")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("UnitMeasureID", String.Empty)
+            @Html.ValidationMessageFor(model => model.UnitMeasureID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Latitude)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Latitude)
+            @Html.ValidationMessageFor(model => model.Latitude)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Longitude)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Longitude)
+            @Html.ValidationMessageFor(model => model.Longitude)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

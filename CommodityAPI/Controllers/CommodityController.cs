@@ -10,37 +10,33 @@ namespace CommodityAPI.Controllers
 {
     public class CommodityController : ApiController
     {
-        // GET /api/commodity
         CommodityAPIContext db = new CommodityAPIContext();
         public CommodityController()
         {
-            db.Configuration.LazyLoadingEnabled = false;
             db.Configuration.ProxyCreationEnabled = false;
-           
-
+            db.Configuration.LazyLoadingEnabled = false;
         }
+        // GET /api/commodity
         public IEnumerable<Commodity> Get()
         {
-          
-          return   db.Commodities.ToList();
+            return db.Commodities.ToList();
         }
 
         // GET /api/commodity/5
         public Commodity Get(int id)
         {
-            var result = db.Commodities.Find(id);
-           return result;
+            return db.Commodities.Single(option => option.CommodityID == id);
         }
 
         // POST /api/commodity
         public HttpResponseMessage<Commodity> Post(Commodity value)
         {
             value.DateTimeSubmitted = DateTime.Now;
-
             db.Commodities.Add(value);
             db.SaveChanges();
+
             var response = new HttpResponseMessage<Commodity>(value, HttpStatusCode.Created);
-            response.Headers.Location = new Uri(Request.RequestUri, "/api/Currency/" + value.CommodityID);
+            response.Headers.Location = new Uri(Request.RequestUri, "/api/Commodity/" + value.CommodityID);
             return response;
         }
 

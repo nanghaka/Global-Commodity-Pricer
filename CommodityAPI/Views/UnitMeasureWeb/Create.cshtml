@@ -1,0 +1,42 @@
+﻿@model CommodityAPI.Models.UnitMeasure
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>UnitMeasure</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UnitName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UnitName)
+            @Html.ValidationMessageFor(model => model.UnitName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ShortForm)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ShortForm)
+            @Html.ValidationMessageFor(model => model.ShortForm)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

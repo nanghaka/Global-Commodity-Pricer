@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Web.Http;
 using CommodityAPI.Models;
 using System.Net;
+
 namespace CommodityAPI.Controllers
 {
     public class UnitMeasureController : ApiController
@@ -15,6 +16,7 @@ namespace CommodityAPI.Controllers
         {
             db.Configuration.LazyLoadingEnabled = false;
             db.Configuration.ProxyCreationEnabled = false;
+            
         }
         public IEnumerable<UnitMeasure> Get()
         {
@@ -24,14 +26,12 @@ namespace CommodityAPI.Controllers
         // GET /api/unitmeasure/5
         public UnitMeasure Get(int id)
         {
-            return db.UnitMeasures.Find(id);
+            return db.UnitMeasures.Single(option => option.UnitMeasureID == id);
         }
 
         // POST /api/unitmeasure
         public HttpResponseMessage<UnitMeasure> Post(UnitMeasure value)
         {
-           
-
             db.UnitMeasures.Add(value);
             db.SaveChanges();
             var response = new HttpResponseMessage<UnitMeasure>(value, HttpStatusCode.Created);

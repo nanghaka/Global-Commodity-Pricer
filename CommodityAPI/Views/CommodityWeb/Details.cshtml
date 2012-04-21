@@ -1,0 +1,64 @@
+﻿@model CommodityAPI.Models.Commodity
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Commodity</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CommodityName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CommodityName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CommodityPrice)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CommodityPrice)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateTimeSubmitted)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateTimeSubmitted)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.User)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Units.UnitName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Units.UnitName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Latitude)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Latitude)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Longitude)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Longitude)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CommodityID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
